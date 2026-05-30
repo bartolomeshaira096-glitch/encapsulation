@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import Frame, Label
-from testfan import TestFan
+from test_fan import TestFan
 
 class FanGUI:
     def __init__(self):
