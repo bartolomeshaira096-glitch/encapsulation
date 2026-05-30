@@ -22,7 +22,7 @@ class FanGUI:
 
         self.root.mainloop()
 
-     def create_ui(self):
+    def create_ui(self):
         title = Label(
             self.root,
             text="💨 FAN MANAGEMENT SYSTEM",
@@ -48,3 +48,40 @@ class FanGUI:
             "🌬️ Fan 2",
             "#64B5F6"
         ).pack(side="right", expand=True, fill="both", padx=15)
+
+    def create_fan_card(self, parent, fan, title, border_color):
+        card = Frame(
+            parent,
+            bg="#1E1E1E",
+            highlightbackground=border_color,
+            highlightthickness=3,
+            bd=0
+        )
+
+        Label(
+            card,
+            text=title,
+            font=("Segoe UI", 20, "bold"),
+            bg="#1E1E1E",
+            fg="white"
+        ).pack(pady=15)
+
+        status = "ON ✅" if fan.is_on() else "OFF ❌"
+
+        info = [
+            f"Status : {status}",
+            f"Speed : {fan.get_speed_name()}",
+            f"Radius : {fan.get_radius()}",
+            f"Color : {fan.get_color().capitalize()}"
+        ]
+
+        for text in info:
+            Label(
+                card,
+                text=text,
+                font=("Segoe UI", 14),
+                bg="#1E1E1E",
+                fg="#E0E0E0"
+            ).pack(anchor="w", padx=30, pady=8)
+
+        return card
