@@ -21,3 +21,30 @@ class FanGUI:
         self.create_ui()
 
         self.root.mainloop()
+
+     def create_ui(self):
+        title = Label(
+            self.root,
+            text="💨 FAN MANAGEMENT SYSTEM",
+            font=("Segoe UI", 24, "bold"),
+            bg="#121212",
+            fg="white"
+        )
+        title.pack(pady=20)
+
+        container = Frame(self.root, bg="#121212")
+        container.pack(expand=True, fill="both", padx=20)
+
+        self.create_fan_card(
+            container,
+            self.fan1,
+            "🔥 Fan 1",
+            "#FFD54F"
+        ).pack(side="left", expand=True, fill="both", padx=15)
+
+        self.create_fan_card(
+            container,
+            self.fan2,
+            "🌬️ Fan 2",
+            "#64B5F6"
+        ).pack(side="right", expand=True, fill="both", padx=15)
