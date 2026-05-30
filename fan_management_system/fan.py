@@ -20,3 +20,23 @@ class Fan:
 
     def is_on(self):
         return self.__on
+
+    def set_speed(self, speed):
+        self.__speed = speed
+
+    def set_radius(self, radius):
+        self.__radius = radius
+
+    def set_color(self, color):
+        self.__color = color
+
+    def set_on(self, on):
+        self.__on = on
+
+    def get_speed_name(self):
+        speed_dict = {
+            1: "SLOW",
+            2: "MEDIUM",
+            3: "FAST"
+        }
+        return speed_dict.get(self.__speed, "UNKNOWN")
