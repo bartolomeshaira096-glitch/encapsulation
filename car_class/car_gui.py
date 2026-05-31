@@ -62,3 +62,29 @@ class CarGUI:
             bg="#0f0f0f"
         )
         button_frame.pack()
+
+        accelerate_btn = tk.Button(
+            button_frame,
+            text="ACCELERATE",
+            font=("Segoe UI", 16, "bold"),
+            bg="#ff2e2e",
+            fg="white",
+            width=15,
+            height=2,
+            relief="flat",
+            command=self.accelerate
+        )
+        accelerate_btn.grid(row=0, column=0, padx=15)
+
+        brake_btn = tk.Button(
+            button_frame,
+            text="BRAKE",
+            font=("Segoe UI", 16, "bold"),
+            bg="#444444",
+            fg="white",
+            width=15,
+            height=2,
+            relief="flat",
+            command=self.brake
+        )
+        brake_btn.grid(row=0, column=1, padx=15)
