@@ -37,3 +37,16 @@ class PetGUI:
         tk.Label(self.frame, text="Age:", fg="white", bg="black").grid(row=3, column=0)
         self.age_entry = tk.Entry(self.frame)
         self.age_entry.grid(row=3, column=1)
+
+        tk.Button(
+            self.frame,
+            text="SAVE PET",
+            command=self.save_pet,
+            bg="red",
+            fg="white"
+        ).grid(row=4, column=0, columnspan=2, pady=10)
+
+        self.output = tk.Label(self.frame, text="", fg="white", bg="black")
+        self.output.grid(row=5, column=0, columnspan=2)
+
+        self.window.mainloop()
