@@ -88,3 +88,24 @@ class CarGUI:
             command=self.brake
         )
         brake_btn.grid(row=0, column=1, padx=15)
+
+        demo_btn = tk.Button(
+            self.root,
+            text="RUN ACTIVITY DEMO",
+            font=("Segoe UI", 15, "bold"),
+            bg="#00aa66",
+            fg="white",
+            relief="flat",
+            command=self.run_demo
+        )
+        demo_btn.pack(pady=40)
+
+        self.log = tk.Text(
+            self.root,
+            height=10,
+            width=70,
+            bg="#181818",
+            fg="white",
+            font=("Consolas", 12)
+        )
+        self.log.pack(pady=10)
