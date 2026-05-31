@@ -17,3 +17,11 @@ class PetGUI:
 
         self.frame = tk.Frame(self.window, bg="#000000", bd=0)
         self.frame.place(relx=0.5, rely=0.5, anchor="center")
+
+        tk.Label(
+            self.frame,
+            text="PET INFO SYSTEM",
+            font=("Helvetica", 18, "bold"),
+            fg="white",
+            bg="black"
+        ).grid(row=0, column=0, columnspan=2, pady=10)
