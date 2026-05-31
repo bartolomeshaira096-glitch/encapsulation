@@ -1,6 +1,7 @@
 import tkinter as tk
 from pet import Pet
 from tkinter import messagebox
+from PIL import Image, ImageTk
 
 class PetGUI:
     def __init__(self):
@@ -11,7 +12,10 @@ class PetGUI:
         self.window.geometry("600x400")
         self.window.resizable(True, True)
 
-        self.bg_image = tk.PhotoImage(file="pet_class/pet_bg.png")
+        img_path = "pet_class/pet_bg.png"
+
+        image = Image.open(img_path)
+        self.bg_image = ImageTk.PhotoImage(image)
         self.bg_label = tk.Label(self.window, image=self.bg_image)
         self.bg_label.place(relwidth=1, relheight=1)
 
