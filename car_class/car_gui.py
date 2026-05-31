@@ -128,3 +128,47 @@ class CarGUI:
         )
 
         self.log.see(tk.END)
+
+    def brake(self):
+        self.car.brake()
+
+        self.update_speed()
+
+        self.log.insert(
+            tk.END,
+            f"Brake -> Speed: {self.car.get_speed()} km/h\n"
+        )
+
+        self.log.see(tk.END)
+
+    def run_demo(self):
+
+        self.log.delete(1.0, tk.END)
+
+        self.log.insert(
+            tk.END,
+            "===== ACTIVITY OUTPUT =====\n\n"
+        )
+
+        for _ in range(5):
+            self.car.accelerate()
+
+            self.log.insert(
+                tk.END,
+                f"Accelerate -> {self.car.get_speed()} km/h\n"
+            )
+
+        self.log.insert(
+            tk.END,
+            "\n"
+        )
+
+        for _ in range(5):
+            self.car.brake()
+
+            self.log.insert(
+                tk.END,
+                f"Brake -> {self.car.get_speed()} km/h\n"
+            )
+
+        self.update_speed()
