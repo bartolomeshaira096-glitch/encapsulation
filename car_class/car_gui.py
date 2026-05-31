@@ -18,3 +18,32 @@ class CarGUI:
         self.setup_ui()
 
         self.root.mainloop()
+
+    def setup_ui(self):
+
+        title = tk.Label(
+            self.root,
+            text="FERRARI 296 GTS",
+            font=("Montserrat", 34, "bold"),
+            bg="#0f0f0f",
+            fg="#ff2e2e"
+        )
+        title.pack(pady=20)
+
+        subtitle = tk.Label(
+            self.root,
+            text="Luxury Performance Speed Simulator",
+            font=("Segoe UI", 14),
+            bg="#0f0f0f",
+            fg="white"
+        )
+        subtitle.pack()
+
+        info = tk.Label(
+            self.root,
+            text=f"Year Model: {self.car.get_year_model()}",
+            font=("Segoe UI", 14),
+            bg="#0f0f0f",
+            fg="#cccccc"
+        )
+        info.pack(pady=10)
