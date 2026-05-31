@@ -109,3 +109,22 @@ class CarGUI:
             font=("Consolas", 12)
         )
         self.log.pack(pady=10)
+
+    def update_speed(self):
+        speed = self.car.get_speed()
+
+        self.speed_label.config(
+            text=f"{speed} KM/H"
+        )
+
+    def accelerate(self):
+        self.car.accelerate()
+
+        self.update_speed()
+
+        self.log.insert(
+            tk.END,
+            f"Accelerate -> Speed: {self.car.get_speed()} km/h\n"
+        )
+
+        self.log.see(tk.END)
