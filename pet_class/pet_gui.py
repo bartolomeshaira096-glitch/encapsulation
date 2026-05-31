@@ -25,3 +25,15 @@ class PetGUI:
             fg="white",
             bg="black"
         ).grid(row=0, column=0, columnspan=2, pady=10)
+
+        tk.Label(self.frame, text="Name:", fg="white", bg="black").grid(row=1, column=0)
+        self.name_entry = tk.Entry(self.frame)
+        self.name_entry.grid(row=1, column=1)
+
+        tk.Label(self.frame, text="Type:", fg="white", bg="black").grid(row=2, column=0)
+        self.type_entry = tk.Entry(self.frame)
+        self.type_entry.grid(row=2, column=1)
+
+        tk.Label(self.frame, text="Age:", fg="white", bg="black").grid(row=3, column=0)
+        self.age_entry = tk.Entry(self.frame)
+        self.age_entry.grid(row=3, column=1)
