@@ -47,3 +47,18 @@ class CarGUI:
             fg="#cccccc"
         )
         info.pack(pady=10)
+
+        self.speed_label = tk.Label(
+            self.root,
+            text="0 KM/H",
+            font=("Impact", 60),
+            bg="#0f0f0f",
+            fg="#00ff99"
+        )
+        self.speed_label.pack(pady=50)
+
+        button_frame = tk.Frame(
+            self.root,
+            bg="#0f0f0f"
+        )
+        button_frame.pack()
