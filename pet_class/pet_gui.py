@@ -11,7 +11,7 @@ class PetGUI:
         self.window.geometry("600x400")
         self.window.resizable(True, True)
 
-        self.bg_image = tk.PhotoImage(file="pet_bg.png")
+        self.bg_image = tk.PhotoImage(file="pet_class/pet_bg.png")
         self.bg_label = tk.Label(self.window, image=self.bg_image)
         self.bg_label.place(relwidth=1, relheight=1)
 
@@ -50,3 +50,19 @@ class PetGUI:
         self.output.grid(row=5, column=0, columnspan=2)
 
         self.window.mainloop()
+
+    def save_pet(self):
+        name = self.name_entry.get()
+        animal_type = self.type_entry.get()
+        age = self.age_entry.get()
+
+        if name == "" or animal_type == "" or age == "":
+            messagebox.showerror("Error", "Complete all fields!")
+            return
+        
+        self.pet.set_name(name)
+        self.pet.set_animal_type(animal_type)
+        self.pet.set_age(age)
+
+        result = f"🐶 Name: {self.pet.get_name()}\n🐱 Type: {self.pet.get_animal_type()}\n🎂 Age: {self.pet.get_age()}"
+        self.output.config(text=result)
