@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 from car import Car
+from PIL import Image, ImageTk
 
 class CarGUI:
     def __init__(self):
@@ -13,7 +14,12 @@ class CarGUI:
         self.root.geometry("1000x650")
         self.root.minsize(900, 600)
 
-        self.root.configure(bg="#0f0f0f")
+        self.original_bg = Image.open("ferrari_bg.jpg")
+
+        self.bg_label = tk.Label(self.root)
+        self.bg_label.place(x=0, y=0, relwidth=1, relheight=1)
+
+        self.root.bind("<Configure>", self.resize_bg)
 
         self.setup_ui()
 
